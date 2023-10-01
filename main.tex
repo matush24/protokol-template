@@ -1,20 +1,24 @@
-\documentclass[slovak]{article}
+\documentclass[slovak, twoside]{article}
+\newif\iftwoside
 
-\input{settings.tex}
+
+% If you want two sided document, change \twosidefalse to \twosidetrue and add `twoside` in [...] after \documentclass
+\twosidefalse
 
 \title{???}
 \author{???}
 \def\labNum{x}
 \def\measureDate{?.?. ????}
 
-
+\input{settings.tex}
 
 
 \begin{document}
 	
 	\include{title-page.tex}
 	
-	\newpage
+	
+	\iftwoside \newpage\null\newpage \else \newpage \fi
 	
 	\tableofcontents
 	\vspace{5pt}

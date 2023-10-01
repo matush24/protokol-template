@@ -1,10 +1,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb, amsthm}
-%\usepackage{wrapfig}
-%\usepackage{epsfig}
-%\usepackage{titling}
-%\usepackage{titlesec}
 \usepackage[slovak]{babel}
 	\addto{\captionsslovak}{\renewcommand{\refname}{Použitá literatúra}}
 \usepackage[margin=2.5cm,
@@ -12,33 +8,37 @@ top=1.5cm,
 includeheadfoot,
 footskip=1cm]{geometry}
 \usepackage{svg}
-%\usepackage{scrextend}
 \usepackage{fancyhdr}
 \usepackage{siunitx}
 \usepackage{ifthen}
-%\usepackage{xstring}
 \usepackage{enumerate}
 \usepackage{enumitem}
-%\usepackage{mathabx}
-%\usepackage{textcomp}
 \usepackage{xfrac}
-%\usepackage{caption}
 \usepackage{indentfirst}
-%\usepackage{xpatch}
 \usepackage{lipsum}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{nicefrac}
 
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
 
 \sisetup{input-digits=0123456789\pi}
+\sisetup{mode=text,range-phrase = {\text{~až~}}}
 \DeclareSIUnit\gforce{g}
 
 \pagestyle{fancy}
 \fancyhf{}
 \makeatletter
-\fancyhead[R]{\@author}
-\fancyhead[L]{{ \@title }}
-\fancyfoot[C]{\thepage}
+\iftwoside 
+	\fancyhead[R]{\@author}
+	\fancyhead[L]{{ \@title }}
+	\fancyfoot[LE, RO]{\thepage}
+\else
+	\fancyhead[R]{\@author}
+	\fancyhead[L]{{ \@title }}
+	\fancyfoot[R]{\thepage}
+\fi
 \makeatother
 
 \makeatletter
@@ -64,17 +64,5 @@ footskip=1cm]{geometry}
 
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
 \renewcommand{\phi}{\varphi}
-
-%\makeatletter
-%\xpatchcmd{\@addmargin}
-%{\setlength{\itemindent}{\z@}%
-	%}
-%{\ifx\@afterindentfalse\@afterindenttrue
-	%	\setlength{\itemindent}{\parindent}%
-	%	\else
-	%	\setlength{\itemindent}{\z@}%
-	%	\fi}
-%{\typeout{Success patching}}{\typeout{Error patching}}
-%\makeatother
 
 \setlist[enumerate]{itemsep=0mm}

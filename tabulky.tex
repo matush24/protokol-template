@@ -1,6 +1,8 @@
 \section{Tabuľky}
 
-\begin{table}[h]
+% we suggest https://www.tablesgenerator.com/# to generate LaTeX tables from excel/libreoffice calc
+
+\begin{minipage}[c]{0.5\textwidth}
 	\centering
 	\begin{tabular}{| c | c | c |}
 		\hline
@@ -18,6 +20,31 @@
 		10 & 100 & 1000\\
 		\hline
 	\end{tabular}
-	\caption{Tabuľka druhých a tretích mocnín.}
+	\captionof{table}{Tabuľka druhých a tretích mocnín.}
 	\label{table:druhe-a-tretie-mocniny}
-\end{table}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+	\centering
+	\begin{tabular}{|ll|}
+		\hline
+		\multicolumn{2}{|c|}{Priemer známeho zotrvačníku}    \\ \hline
+		\multicolumn{1}{|c|}{meranie} & $2R$ {[}\si{\metre}{]}   \\ \hline
+		\multicolumn{1}{|c|}{1}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{2}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{3}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{4}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{5}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{6}       & 0.168                \\ 
+		\multicolumn{1}{|c|}{7}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{8}       & 0.167                \\ 
+		\multicolumn{1}{|c|}{9}       & 0.168                \\ 
+		\multicolumn{1}{|c|}{10}      & 0.167                \\ \hline
+		\multicolumn{1}{|c|}{mean}    & 0.1672               \\ 
+		\multicolumn{1}{|c|}{stdev}     & 0.00042 \\ \hline
+		\multicolumn{1}{|c|}{$R$}       & 0.0836               \\ \hline
+	\end{tabular}
+	\captionof{table}{Meranie polomeru známeho zotrvačníku $R$.}
+	\label{tab:R}
+\end{minipage}
+
+\vspace{20pt}
