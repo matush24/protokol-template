@@ -21,6 +21,7 @@ footskip=1cm]{geometry}
 \usepackage{caption}
 \usepackage{setspace}
 \usepackage{nicefrac}
+%\usepackage{titlesec}
 
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
@@ -33,12 +34,12 @@ footskip=1cm]{geometry}
 \fancyhf{}
 \makeatletter
 \iftwoside 
-	\fancyhead[R]{\@author}
-	\fancyhead[L]{{ \@title }}
+	\fancyhead[RE, LO]{\@author}
+	\fancyhead[LE, RO]{\slshape\nouppercase\leftmark}
 	\fancyfoot[LE, RO]{\thepage}
 \else
 	\fancyhead[R]{\@author}
-	\fancyhead[L]{{ \@title }}
+	\fancyhead[L]{\slshape\nouppercase\leftmark}
 	\fancyfoot[R]{\thepage}
 \fi
 \makeatother
