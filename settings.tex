@@ -21,13 +21,14 @@ footskip=1cm]{geometry}
 \usepackage{caption}
 \usepackage{setspace}
 \usepackage{nicefrac}
-%\usepackage{titlesec}
+\usepackage{float}
 
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
 
 \sisetup{input-digits=0123456789\pi}
 \sisetup{mode=text,range-phrase = {\text{~až~}}}
+\sisetup{exponent-product = \cdot, output-product = \cdot}
 \DeclareSIUnit\gforce{g}
 
 \pagestyle{fancy}
