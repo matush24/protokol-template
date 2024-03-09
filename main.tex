@@ -7,15 +7,16 @@
 
 \title{Title}
 \author{Author}
-\def\measureDate{?.?. ????}
+\def\measureDate{\textit{MeasureDate}}
+\def\submitDate{\textit{Submit date}}
+\def\taskNumber{\textit{Task Number}}
+\def\studyGroup{\textit{Study group}}
 
 \input{settings.tex}
-
 
 \begin{document}
 	
 	\include{title-page.tex}
-	
 	
 	\iftwoside \newpage\null\newpage \else \newpage \fi
 	
@@ -23,22 +24,26 @@
 	\vspace{5pt}
 	\noindent\hrulefill
 	
-	\input{abstrakt.tex}
+	\begin{multicols}{2}
+		[\input{abstrakt.tex}]
+		
+		\input{teoria.tex}
+		
+		\input{ciele-prace.tex}
+		
+		\input{pomôcky.tex}
+		
+		\input{postup.tex}
+		
+		\input{tabulky.tex}
+		
+		\input{diskusia.tex}
+		
+		\input{zaver.tex}
+		
+		\input{literatura.tex}
+	\end{multicols}
 	
-	\input{teoria.tex}
 	
-	\input{ciele-prace.tex}
-	
-	\input{pomôcky.tex}
-	
-	\input{postup.tex}
-	
-	\input{tabulky.tex}
-	
-	\input{diskusia.tex}
-	
- 	\input{zaver.tex}
-	
-	\input{literatura.tex}
 	
 \end{document}

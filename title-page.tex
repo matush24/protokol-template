@@ -1,6 +1,11 @@
 \makeatletter
 \begin{titlepage}
 	\begin{center}
+		\textit{FMFI UK Katedra experimentálnej fyziky}
+		
+		\vspace{15pt}
+		
+		{\large\textbf{Fyzikálne praktikum II - Elektrina a magnetizmus}}
 		
 		\vspace*{100pt}
 		
@@ -8,11 +13,19 @@
 			{\Huge\textbf{\@title}}	
 		\end{spacing}	
 			
+		Úloha č. \taskNumber
+		
 	\end{center}
 
 	\vfill
 
-	Dátum merania: \measureDate
-	\hfill
-	\@author
+	\noindent
+	\begin{spacing}{1.15}
+		\begin{table}[H]
+			\begin{tabular}{p{0.18\textwidth} p{0.4\textwidth} p{0.18\textwidth} p{0.22\textwidth}}
+				Dátum merania: & \measureDate & Vypracoval: & \@author \\
+				Dátum odovzdania: & \submitDate & Študijná skupina: & \studyGroup
+			\end{tabular}
+		\end{table}
+	\end{spacing}
 \end{titlepage}

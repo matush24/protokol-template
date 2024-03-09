@@ -1,36 +1,38 @@
+% Basic packages
 \usepackage[utf8]{inputenc}
-%\usepackage[sfdefault]{roboto}
-%\usepackage[T1]{fontenc}
-\usepackage{graphicx}
+\usepackage{graphicx, svg}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage[slovak]{babel}
 	\addto{\captionsslovak}{\renewcommand{\refname}{Použitá literatúra}}
+
+% Layout packages
 \usepackage[margin=2.5cm,
 top=1.5cm,
 includeheadfoot,
 footskip=1cm]{geometry}
-\usepackage{svg}
-\usepackage{fancyhdr}
-\usepackage{siunitx}
-\usepackage{ifthen}
-\usepackage{enumerate}
-\usepackage{enumitem}
-\usepackage{xfrac}
-\usepackage{indentfirst}
-\usepackage{lipsum}
-\usepackage{caption}
-\usepackage{setspace}
-\usepackage{nicefrac}
-\usepackage{float}
+\usepackage{fancyhdr, indentfirst, caption, setspace, multicol, float}
 
+% Text improvement packages
+\usepackage{siunitx, xfrac, nicefrac}
+\usepackage{enumerate, enumitem}
+
+% Other packages
+\usepackage{ifthen}
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Setup references
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
 
+% Setup siunitx package
 \sisetup{input-digits=0123456789\pi}
 \sisetup{mode=text,range-phrase = {\text{~až~}}}
 \sisetup{exponent-product = \cdot, output-product = \cdot}
 \DeclareSIUnit\gforce{g}
 
+% Setup headers and footers
 \pagestyle{fancy}
 \fancyhf{}
 \makeatletter
@@ -45,6 +47,7 @@ footskip=1cm]{geometry}
 \fi
 \makeatother
 
+% Declare correct differential
 \makeatletter
 \providecommand*{\diff}%
 {\@ifnextchar^{\DIfF}{\DIfF^{}}}
@@ -66,7 +69,22 @@ footskip=1cm]{geometry}
 	\fi\fi\fi\DiffSpace}
 \makeatother
 
+% Symbol changes
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
 \renewcommand{\phi}{\varphi}
 
+% List setup
 \setlist[enumerate]{itemsep=0mm}
+
+% Abstract setup
+\renewenvironment{abstract}%
+{\thispagestyle{empty}%
+	\paragraph{\abstractname:}}%
+{}
+
+% Chart environment setup
+\newfloat{chart}{tbph}{loc}
+\floatname{chart}{Graf}
+\usepackage{cleveref}
+\crefname{chart}{chart}{charts}
+\Crefname{chart}{Chart}{Charts}
